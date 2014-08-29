@@ -72,7 +72,7 @@
 
             var foo = container.ResolveAll<IFoo>();
             Console.WriteLine("This should have 2 items");
-            Console.WriteLine("Count:"+foo.Count());
+            Console.WriteLine("Count:" + foo.Count());
         }
     }
 
@@ -90,7 +90,7 @@
         {
             get
             {
-                return new[] { new CollectionTypeRegistration(typeof(IFoo), new[] { typeof(Foo), typeof(Bar) }), };
+                return new[] { new CollectionTypeRegistration(typeof(IFoo), new[] { typeof(Foo), typeof(Bar) }, Lifetime.PerRequest), };
             }
         }
         public IEnumerable<InstanceRegistration> InstanceRegistrations { get; private set; }
