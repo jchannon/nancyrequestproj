@@ -52,13 +52,18 @@
 
     public class MyBootstrapper : DefaultNancyBootstrapper
     {
+        protected override void ConfigureApplicationContainer(TinyIoCContainer container)
+        {
+            //base.ConfigureApplicationContainer(container);
+        }
+
         protected override void ApplicationStartup(TinyIoCContainer container, IPipelines pipelines)
         {
             base.ApplicationStartup(container, pipelines);
 
             container.Register<IBlah, GlobalBlah>();
             container.RegisterMultiple<IFoo>(Enumerable.Empty<Type>());
-
+            var foo = container.ResolveAll<IFoo>(); 
 
         }
 
@@ -70,7 +75,7 @@
             Console.WriteLine("This should be Blan NOT GlobalBlah");
             Console.WriteLine(blah.GetType());
 
-            var foo = container.ResolveAll<IFoo>();
+            var foo = container.ResolveAll<IFoo>(); 
             Console.WriteLine("This should have 2 items");
             Console.WriteLine("Count:" + foo.Count());
         }
