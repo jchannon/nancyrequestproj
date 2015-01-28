@@ -38,6 +38,10 @@
     <Reference Include="Microsoft.Owin.Hosting">
       <HintPath>..\packages\Microsoft.Owin.Hosting.3.0.0\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
     </Reference>
+    <Reference Include="Nancy, Version=0.23.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ConsoleApplication1\packages\Nancy.0.23.2\lib\net40\Nancy.dll</HintPath>
+    </Reference>
     <Reference Include="Nancy.Owin">
       <HintPath>..\packages\Nancy.Owin.0.23.2\lib\net40\Nancy.Owin.dll</HintPath>
     </Reference>
@@ -60,9 +64,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Nancy\src\Nancy\Nancy.csproj">
-      <Project>{34576216-0dca-4b0f-a0dc-9075e75a676f}</Project>
-      <Name>Nancy</Name>
+    <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj">
+      <Project>{978d78b0-c161-4e99-aef2-8ee82c2e15e5}</Project>
+      <Name>ClassLibrary1</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
